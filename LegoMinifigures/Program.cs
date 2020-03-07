@@ -1,6 +1,4 @@
 ﻿using System;
-using LegoMinifigures.Gals;
-using LegoMinifigures.Guys;
 
 
 namespace LegoMinifigures
@@ -9,17 +7,29 @@ namespace LegoMinifigures
     {
         static void Main(string[] args)
         {
-            var waveHello = new Glee();
-            waveHello.IsALady = true;
+            var astronaut = new Astronaut("Space Dude", "Janitor");
+            var astronaut2 = new Astronaut("Space Lady", "Janitor");
 
-            var hangloose = new WaveRider();
-            hangloose.notALady = true;
+            astronaut.DoYourJob();
 
-            var gardening = new Leah();
-            gardening.canBuild = true;
+            var casper = new Ghost("Casper", DateTime.Today);
+            casper.Friendly = true;
+            //OR
+            //{
+            //    Friendly = true;
+            //}
+            casper.Spook();
+            casper.Haunt("Whipstaff Manor");
+            casper.Spook();
 
-            var totally = new Dude();
-            totally.notALady = true;
+            var fatso = new Ghost("Fatso", new DateTime(1924, 12, 1));
+            fatso.Friendly = false;
+
+            fatso.Spook();
+            fatso.Haunt("Your House");
+            fatso.Spook();
+
+            Console.ReadKey();
         }
     }
 }
