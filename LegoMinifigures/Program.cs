@@ -1,4 +1,7 @@
 ﻿using System;
+using LegoMinifigures.Composition.Heads;
+using LegoMinifigures.Composition.Legs;
+using LegoMinifigures.Composition.Torsos;
 
 
 namespace LegoMinifigures
@@ -7,10 +10,33 @@ namespace LegoMinifigures
     {
         static void Main(string[] args)
         {
-            var astronaut = new Astronaut("Space Dude", "Janitor");
-            var astronaut2 = new Astronaut("Space Lady", "Janitor");
+            var head = new AstronautHead
+            {
+                FacialExpression = "Smiling",
+                Color = LegoColor.Orange,
+                EyeColor = LegoColor.Green,
+                Helmeted = true
+            };
 
-            astronaut.DoYourJob();
+            var legs = new AstronautLegs
+            {
+                HasPants = true,
+                Shoes = ShoeType.FlipFlops
+            };
+
+            var torso = new AstronautTorso
+            {
+                HandType = HandType.Baby,
+                ChiseledAbs = true,
+                NumberofArms = 3,
+                Shirted = true
+
+            };
+
+            var astronaut = new Astronaut("Space Dude", "Janitor", head, torso, legs);
+            var astronaut2 = new Astronaut("Space Lady", "Janitor", head, torso, legs);
+
+            astronaut.DoYourJob(55);
 
             var casper = new Ghost("Casper", DateTime.Today);
             casper.Friendly = true;

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using LegoMinifigures.Composition.Heads;
+using LegoMinifigures.Composition.Legs;
+using LegoMinifigures.Composition.Torsos;
 
 namespace LegoMinifigures
 {
@@ -13,10 +16,19 @@ namespace LegoMinifigures
         public string Job { get; private set; }  //Public property with private setter. can be gotten whenever, but only set within this class
         public int OxygenLevel { private get; set; }  //only we can get, but anyone can set
 
-        public Astronaut(string name, string job)
+        public AstronautTorso Torso { get; set; }
+        public AstronautLegs Legs { get; set; }
+        public AstronautHead Head { get; set; }
+
+
+        public Astronaut(string name, string job, AstronautHead head, AstronautTorso torso, AstronautLegs legs)
         {
             Name = name;
             Job = job;
+
+            Head = head;
+            Torso = torso;
+            Legs = legs;
         }
 
         public void Promote()
@@ -24,9 +36,13 @@ namespace LegoMinifigures
             Job = "Commander of Janitors";
         }
 
-        public void DoYourJob()
+        public void DoYourJob(int stepsToWalk)
         {
             Console.WriteLine($"Doing all my {Job} duties...");
+            Legs.Walk(stepsToWalk);
+            Head.EatPie("Cherry");
+            Torso.Flex();
+            Legs.Walk(stepsToWalk);
         }
     }
 }

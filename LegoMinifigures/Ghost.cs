@@ -22,7 +22,7 @@ namespace LegoMinifigures
         {
             HauntingLocation = hauntingLocation;
             Console.WriteLine($"{Name} has moved into {hauntingLocation}");
-        }
+        } 
 
         public void Spook()
         {
