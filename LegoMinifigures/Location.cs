@@ -4,17 +4,14 @@ using System.Text;
 
 namespace LegoMinifigures
 {
-    class Location
+    enum Location //a collection of options
     {
-        enum Location //a collection of options
-        {
-            Earth,
-            Space,
-            SpaceStation,
-            Moon,
-            ATesla,
-            Blackhole,
-            Mars
-        }
+        Earth,
+        Space,
+        SpaceStation,
+        Moon,
+        ATesla,
+        Blackhole,
+        Mars
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using LegoMinifigures.Composition.Heads;
 using LegoMinifigures.Composition.Legs;
 using LegoMinifigures.Composition.Torsos;
@@ -54,6 +55,8 @@ namespace LegoMinifigures
             fatso.Spook();
             fatso.Haunt("Your House");
             fatso.Spook();
+
+            var torsoes = new List<TorsoBase>();
 
             Console.ReadKey();
         }
