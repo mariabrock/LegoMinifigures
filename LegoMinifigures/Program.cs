@@ -25,7 +25,14 @@ namespace LegoMinifigures
                 Shoes = ShoeType.FlipFlops
             };
 
-            var torso = new AstronautTorso
+            var dtorso = new DadBodTorso
+            {
+                HandType = HandType.Baby,
+                ChiseledAbs = true,
+                Shirted = true
+            };
+
+            var atorso = new AstronautTorso
             {
                 HandType = HandType.Baby,
                 ChiseledAbs = true,
@@ -33,6 +40,11 @@ namespace LegoMinifigures
                 Shirted = true
 
             };
+
+            atorso.Breathe();
+            dtorso.Breathe();
+            atorso.HandType = HandType.Baby;
+            dtorso.ChiseledAbs = false;
 
             var astronaut = new Astronaut("Space Dude", "Janitor", head, torso, legs);
             var astronaut2 = new Astronaut("Space Lady", "Janitor", head, torso, legs);
@@ -56,7 +68,20 @@ namespace LegoMinifigures
             fatso.Haunt("Your House");
             fatso.Spook();
 
-            var torsoes = new List<TorsoBase>();
+            var torsos = new List<TorsoBase> { dtorso, atorso, new DadBodTorso()};
+
+            foreach (var torso in torsos)
+            {
+                torso.Breathe();
+                torso.Flex();
+            }
+
+            var colorfulThings = new List<IColorful> { dtorso, new BabyLegs() };
+
+            foreach (var colorfulThing in colorfulThings)
+            {
+                Console.WriteLine(colorfulThing.Color);
+            }
 
             Console.ReadKey();
         }

@@ -1,15 +1,19 @@
-﻿using System;
+﻿using LegoMinifigures.Composition.Heads;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LegoMinifigures.Composition.Legs
 {
-    class BabyLegs
+    class BabyLegs : IColorful
     {
         public bool CanWalk { get; set; }
         public int NumOfRolls { get; set; }
         public bool IsClumsy => true;
         public bool HasPants { get; set; }
+        public LegoColor Color => LegoColor.White;
+
+        LegoColor IColorful.Color => throw new NotImplementedException();
 
         public void Walk(int steps)
         {

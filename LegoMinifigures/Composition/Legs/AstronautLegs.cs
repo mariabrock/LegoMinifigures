@@ -22,11 +22,4 @@ namespace LegoMinifigures.Composition.Legs
             return heightOfJump;
         }
     }
-
-    enum ShoeType
-    {
-        None,
-        Boots,
-        FlipFlops
-    }
 }

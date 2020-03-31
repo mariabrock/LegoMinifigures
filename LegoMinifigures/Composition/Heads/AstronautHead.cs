@@ -25,16 +25,4 @@ namespace LegoMinifigures.Composition.Heads
                 Console.WriteLine("This is not pie");
         }
     }
-
-    enum LegoColor
-    {
-        Yellow,
-        Red,
-        Green,
-        White,
-        Grey,
-        Blue,
-        Black,
-        Orange
-    }
 }

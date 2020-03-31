@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LegoMinifigures.Composition.Heads;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,6 +13,9 @@ namespace LegoMinifigures.Composition.Torsos
             get { return false; }
             set { }
         }
+
+        //public LegoColor Color => LegoColor.Yellow;
+        //public LegoColor Color{ get; set; }
 
         public void ChangeTemperature (string weather)
         {
@@ -32,5 +36,7 @@ namespace LegoMinifigures.Composition.Torsos
                 beer belly while using is {HandType} 
                 hands to point at his flabby arms ");
         }
+
+
     }
 }
